@@ -14,6 +14,7 @@ class ContactBook{
             myContact.createContact();
             Book.insertAt(numcontact,myContact);
             numcontact++;
+            cout << "Contact added!" << endl;
         };
         // delete
         void deleteContact(){
@@ -68,8 +69,21 @@ int main(){
         cout << "4. Print contact book" << endl;
         cout << "5. Exit program" << endl;
 
-        cout << "\nWhat is your choice? Input the number"<< endl;
+        cout << "\nWhat is your choice? Input the number: "<< endl;
         cin >> ans;
+        while(!(cin >> ans)){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input." << endl;
+            cout << "==CONTACT BOOK==" << endl;
+            cout << "1. Add a new contact" << endl;
+            cout << "2. Delete a contact" << endl;
+            cout << "3. Search a contact" << endl;
+            cout << "4. Print contact book" << endl;
+            cout << "5. Exit program" << endl;
+
+            cout << "\nWhat is your choice? Input the number: "<< endl;
+        }
         if(ans == 1){
             Book.addContact();
         }
@@ -86,8 +100,11 @@ int main(){
             cout << "Thank you! See you next time!";
             check = false;
         }
+        else if(!isdigit(ans)){
+            cerr << "Stop" << endl;
+        }
         else{
-            cout << "Please enter the right value." << endl;
+            cerr << "Please enter the right value." << endl;
         }
     }
 

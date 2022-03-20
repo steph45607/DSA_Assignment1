@@ -1,0 +1,20 @@
+1. Insert a new item at the beginning of the array
+O(n)
+Because it will move the rest of the array to one index and this will use a for loop.
+Then can make the 0 index = to the item entered
+
+2. Insert a new item at the end of the array
+O(1)
+Because it can just use the last or maxSize variable and add it to the back of the array.
+No loop needed.
+
+3. Delete an item at the beginning of the array
+O(n)
+To erase the first value, after it's erased. We have to move the rest of the array up by index 1.
+Therefore we will need a loop to re-assign them.
+
+4. Delete an item at the end of the array
+O(1)
+Can use the last or maxSize variable and erase it.
+Then we can decrease the last variable or maxSize variable by 1.
+last--; or maxSize--;
